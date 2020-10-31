@@ -105,6 +105,7 @@ func (c *Client) runWithJSON(ctx context.Context, req *Request, resp interface{}
 		Query:     req.q,
 		Variables: req.vars,
 	}
+	fmt.Println("requestBodyObj:",requestBodyObj)
 	if err := json.NewEncoder(&requestBody).Encode(requestBodyObj); err != nil {
 		return errors.Wrap(err, "encode body")
 	}
